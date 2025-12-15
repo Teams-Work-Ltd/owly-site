@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="assets/pluginLogo.png" alt="Owly Jira Data Exporter logo" width="150" />
+  <img src="assets/pluginLogo.png" alt="Owly Confluence Data Exporter logo" width="150" />
 </p>
 
-<h1 align="center">Owly Jira Data Exporter</h1>
+<h1 align="center">Owly Confluence Data Exporter</h1>
 
 <p align="center">
-  Explore Jira Data Center database tables via a simple, read-only REST API.
+  Explore Confluence Data Center database tables via a simple, read-only REST API.
 </p>
 
 ---
@@ -17,13 +17,13 @@
 
 ---
 
-## Where to find Owly in Jira
+## Where to find Owly in Confluence
 
-Owly is configured from the Jira administration section:
+Owly is configured from the Confluence administration section:
 
-- **Jira admin URL:**  
+- **Confluence admin URL:**  
   `/secure/admin/OwlyExporterSettings.jspa`
-- **Required permissions:** Jira **System Administrator**
+- **Required permissions:** Confluence **System Administrator**
 
 From this page you can:
 
@@ -36,7 +36,7 @@ From this page you can:
 
 ## What Owly does
 
-Owly exposes a **read-only REST API** over selected Jira database tables
+Owly exposes a **read-only REST API** over selected Confluence database tables
 (including application tables and ActiveObjects tables) so that admins and
 integrators can:
 
@@ -45,21 +45,21 @@ integrators can:
 - fetch records by ID,
 - perform safe batch reads for integrations, backups, or migrations.
 
-> ✅ Owly **does not write** to Jira via this REST API.  
+> ✅ Owly **does not write** to Confluence via this REST API.  
 > All operations are read-only.
 
 ---
 
 ## Quick REST entry points
 
-> Replace `https://your-jira.example.com` with your Jira base URL.
+> Replace `https://your-Confluence.example.com` with your Confluence base URL.
 
 ### 1. List available tables
 
 **GET**
 
 ```http
-GET https://your-jira.example.com/rest/restrepo/1.a7c3/d4e1/repo/tables
+GET https://your-Confluence.example.com/rest/restrepo/1.a7c3/d4e1/repo/tables
 ```
 
 Returns all visible tables Owly can see.  
@@ -74,7 +74,7 @@ Example for the `propertyentry` table:
 **GET**
 
 ```http
-GET https://your-jira.example.com/rest/restrepo/1.a7c3/d4e1/repo/tables/propertyentry?offset=0&limit=100
+GET https://your-Confluence.example.com/rest/restrepo/1.a7c3/d4e1/repo/tables/propertyentry?offset=0&limit=100
 ```
 
 Parameters:
@@ -89,7 +89,7 @@ Parameters:
 **GET**
 
 ```http
-GET https://your-jira.example.com/rest/restrepo/1.a7c3/d4e1/repo/tables/propertyentry/1
+GET https://your-Confluence.example.com/rest/restrepo/1.a7c3/d4e1/repo/tables/propertyentry/1
 ```
 
 Fetch a single row by numeric ID.
@@ -103,7 +103,7 @@ Fetch multiple entities by ID in a single request.
 **POST**
 
 ```http
-POST https://your-jira.example.com/rest/restrepo/1.a7c3/d4e1/repo/tables/propertyentry/batch
+POST https://your-Confluence.example.com/rest/restrepo/1.a7c3/d4e1/repo/tables/propertyentry/batch
 Content-Type: application/json
 
 {
@@ -136,16 +136,16 @@ For commercial questions or custom licensing options, please contact us via:
 
 ---
 
-## Jira Data Center lifecycle & long-term support
+## Confluence Data Center lifecycle & long-term support
 
-Atlassian has announced end-of-life dates for Jira Data Center versions.
+Atlassian has announced end-of-life dates for Confluence Data Center versions.
 
 Owly, together with **Teams, Work**, aims to:
 
-- keep your Jira data **accessible and explorable** even after Atlassian
+- keep your Confluence data **accessible and explorable** even after Atlassian
   support ends for specific DC versions,
 - provide **extended support contracts** via Teams, Work licensing,
-- support **additional Jira versions on request** (older, LTS, or future).
+- support **additional Confluence versions on request** (older, LTS, or future).
 
 If you need support for:
 
