@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/owlyLogo.png" alt="Owly Jira Data Exporter logo" width="150" />
+  <img src="{{ site.baseurl }}/assets/owlyLogo.png" alt="Owly Jira Data Exporter logo" width="150" />
 </p>
 
 <h1 align="center">Owly Jira Data Exporter</h1>

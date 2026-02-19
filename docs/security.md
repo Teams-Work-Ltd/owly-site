@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/owlyLogo.png" alt="Owly Data Exporter logo" width="120" />
+  <img src="{{ site.baseurl }}/assets/owlyLogo.png" alt="Owly Data Exporter logo" width="120" />
 </p>
 
 <h1 align="center">Data Security & Privacy</h1>

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/owlyLogo.png" alt="Owly Confluence Data Exporter logo" width="150" />
+  <img src="{{ site.baseurl }}/assets/owlyLogo.png" alt="Owly Confluence Data Exporter logo" width="150" />
 </p>
 
 <h1 align="center">Owly Confluence Data Exporter</h1>
