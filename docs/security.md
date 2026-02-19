@@ -1,34 +1,36 @@
 <p align="center">
-  <img src="assets/pluginLogo.png" alt="Owly Jira Data Exporter logo" width="120" />
+  <img src="assets/owlyLogo.png" alt="Owly Data Exporter logo" width="120" />
 </p>
 
 <h1 align="center">Data Security & Privacy</h1>
 
 <p align="center">
-  Owly Jira Data Exporter – Your data, your control.
+  Owly Data Exporter for Atlassian Data Center – Your data, your control.
 </p>
 
 ---
 
 **Navigation**
 
-- [Home – Overview & REST API](index.html)
+- [← All Products](index.html)
+- [Owly for Jira](jira.html)
+- [Owly for Confluence](confluence.html)
 - [Data Security & Privacy](security.html)
 
 ---
 
-## 1. Deployment model – Data stays in Jira
+## 1. Deployment model – Data stays in your instance
 
-Owly Jira Data Exporter is built for **Jira Data Center**.
+Owly Data Exporter is built for **Atlassian Data Center** (Jira and Confluence).
 
 - ✔ **Local data storage** – All configuration, logs, and analytics data are
-  stored in your Jira database.
-- ✔ **No external mirroring** – We do not copy, mirror, or replicate your Jira
-  data to external services by default.
+  stored in your Atlassian instance database.
+- ✔ **No external mirroring** – We do not copy, mirror, or replicate your data
+  to external services by default.
 - ✔ **Always readable** – Export data and configuration remain readable in your
-  Jira database even if your license expires.
+  database even if your license expires.
 
-Your Jira instance (and its infrastructure) remains the **only source of truth**
+Your Atlassian instance (and its infrastructure) remains the **only source of truth**
 for your data.
 
 ---
@@ -36,16 +38,16 @@ for your data.
 ## 2. Data storage & access
 
 - ✔ **Local Data Storage** – Owly stores its own configuration and metadata in
-  standard Jira / AO tables within your database.
-- ✔ **No external transmission by default** – No Jira issue data, comments,
-  attachments, or custom fields are sent outside your infrastructure unless you
+  standard application / AO tables within your database.
+- ✔ **No external transmission by default** – No content data (issues, pages, comments,
+  attachments, or custom fields) is sent outside your infrastructure unless you
   explicitly configure such integrations (e.g., email notifications, webhooks).
-- ✔ **Access control via Jira** – Access to Owly is governed by your existing
-  Jira permissions (e.g., Jira System Administrators, global permissions, and
-  any SSO / IdP rules you already enforce).
+- ✔ **Access control via Atlassian** – Access to Owly is governed by your existing
+  permissions (System Administrators, global permissions, and any SSO / IdP rules
+  you already enforce).
 
 If your organization uses SSO, VPN, or other security layers, Owly respects
-those configurations automatically because it runs inside Jira.
+those configurations automatically because it runs inside your Atlassian instance.
 
 ---
 
@@ -59,11 +61,11 @@ based on real usage patterns.
 - ✔ **Performance-optimized** – Events are collected and sent in batched,
   lightweight payloads to minimize overhead.
 - ✔ **Transparent** – Analytics focuses on feature usage (e.g., which Owly
-  views or endpoints are used) and **never** on Jira issue content.
+  views or endpoints are used) and **never** on instance content.
 
 Example characteristics (implementation may vary by version):
 
-- Logged events are stored first in your Jira database in a dedicated
+- Logged events are stored first in your database in a dedicated
   ActiveObjects table (for example `AO_OWLY_EVENT_AO` or similar).
 - When remote analytics is enabled, batched events are transmitted over HTTPS
   with an encoded payload and integrity hash.
@@ -94,7 +96,7 @@ Example characteristics (implementation may vary by version):
 
 ### Analytics – What is **not** collected
 
-- ✔ No user-generated content (Jira issue summaries, descriptions, comments)
+- ✔ No user-generated content (issue summaries, descriptions, pages, comments)
 - ✔ No personally identifiable information (PII)
 - ✔ No compliance / audit / business-sensitive payloads
 
@@ -108,9 +110,9 @@ Admins can tailor Owly to match organizational policies:
 
 - Enable/disable analytics
 - Configure notification channels (e.g. email) or disable them entirely
-- Restrict who can access Owly UI and APIs via Jira permissions
+- Restrict who can access Owly UI and APIs via Atlassian permissions
 
-We recommend that Jira System Administrators review these settings during
+We recommend that System Administrators review these settings during
 on-boarding and periodically as part of security reviews.
 
 ---
@@ -124,7 +126,7 @@ Owly follows security practices aligned with Atlassian Marketplace expectations:
 - ✔ **Dependency scanning** – We use tools such as Dependabot / Snyk to track
   vulnerabilities in third-party libraries and keep them updated.
 - ✔ **Transparent dependencies** – We maintain a Software Bill of Materials
-  (SBOM) within the plugin’s `META-INF` resources so administrators can inspect
+  (SBOM) within the plugin's `META-INF` resources so administrators can inspect
   which components are used.
 
 ---
@@ -141,8 +143,8 @@ Our handling of user data is designed to align with common privacy regulations
 
 Your organization remains in control of:
 
-- how long Jira data is kept,
-- who can access your Jira instance and Owly,
+- how long data is kept,
+- who can access your Atlassian instance and Owly,
 - which optional integrations or analytics are enabled.
 
 ---
@@ -158,7 +160,7 @@ If you have:
 
 please reach out via our support portal:
 
-> 👉 https://teams-work.atlassian.net/servicedesk/customer/portal/1
+> 👉 [https://teams-work.atlassian.net/servicedesk/customer/portal/1](https://teams-work.atlassian.net/servicedesk/customer/portal/1)
 
 We are happy to provide additional details, security questionnaires, or
 version-specific documentation on request.

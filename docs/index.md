@@ -1,156 +1,67 @@
 <p align="center">
-  <img src="assets/pluginLogo.png" alt="Owly Jira Data Exporter logo" width="150" />
+  <img src="assets/owlyLogo.png" alt="Owly Data Exporter logo" width="150" />
 </p>
 
-<h1 align="center">Owly Jira Data Exporter</h1>
+<h1 align="center">Owly Data Exporter</h1>
 
 <p align="center">
-  Explore Jira Data Center database tables via a simple, read-only REST API.
+  Explore Atlassian Data Center database tables via a simple, read-only REST API.<br/>
+  Available for <strong>Jira</strong> and <strong>Confluence</strong>.
 </p>
 
 ---
 
-**Navigation**
+## Choose your product
 
-- [Home – Overview & REST API](index.html)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <h3>🗂️ <a href="jira.html">Owly for Jira</a></h3>
+      <p>Read-only REST API access to Jira Data Center database tables.<br/>
+      Ideal for integrations, backups, and migrations.</p>
+      <a href="jira.html"><strong>→ Jira Docs & API Reference</strong></a>
+    </td>
+    <td align="center" width="50%">
+      <h3>📄 <a href="confluence.html">Owly for Confluence</a></h3>
+      <p>Read-only REST API access to Confluence Data Center database tables.<br/>
+      Same power, built for Confluence.</p>
+      <a href="confluence.html"><strong>→ Confluence Docs & API Reference</strong></a>
+    </td>
+  </tr>
+</table>
+
+---
+
+## What is Owly?
+
+Owly is a **read-only REST API plugin** for Atlassian Data Center products.  
+It lets admins and integrators safely explore database tables — no writes, no risk.
+
+**Core capabilities (both products):**
+- Discover all available tables (application + ActiveObjects)
+- Page through table rows
+- Fetch records by ID
+- Batch fetch multiple records in a single request
+
+> ✅ Owly **never writes** to your Atlassian instance. All operations are strictly read-only.
+
+---
+
+## Licensing
+
+Owly supports two licensing paths:
+
+- **Atlassian Marketplace license** — standard Data Center licensing
+- **Teams, Work custom license** — for extended support windows, custom SLAs, and bundled services
+
+> 👉 Support & licensing portal:  
+> [https://teams-work.atlassian.net/servicedesk/customer/portal/1](https://teams-work.atlassian.net/servicedesk/customer/portal/1)
+
+---
+
+## Navigation
+
+- [Owly for Jira – Docs & API](jira.html)
+- [Owly for Confluence – Docs & API](confluence.html)
 - [Data Security & Privacy](security.html)
-
----
-
-## Where to find Owly in Jira
-
-Owly is configured from the Jira administration section:
-
-- **Jira admin URL:**  
-  `/secure/admin/OwlyExporterSettings.jspa`
-- **Required permissions:** Jira **System Administrator**
-
-From this page you can:
-
-- enable or disable Owly,
-- configure access / authentication,
-- manage licensing (Atlassian or Teams, Work custom license),
-- configure optional analytics (if available in your build).
-
----
-
-## What Owly does
-
-Owly exposes a **read-only REST API** over selected Jira database tables
-(including application tables and ActiveObjects tables) so that admins and
-integrators can:
-
-- discover what tables are available,
-- page through rows,
-- fetch records by ID,
-- perform safe batch reads for integrations, backups, or migrations.
-
-> ✅ Owly **does not write** to Jira via this REST API.  
-> All operations are read-only.
-
----
-
-## Quick REST entry points
-
-> Replace `https://your-jira.example.com` with your Jira base URL.
-
-### 1. List available tables
-
-**GET**
-
-```http
-GET https://your-jira.example.com/rest/restrepo/1.a7c3/d4e1/repo/tables
-```
-
-Returns all visible tables Owly can see.  
-Use this to discover AO / application tables before drilling into data.
-
----
-
-### 2. Page through a table
-
-Example for the `propertyentry` table:
-
-**GET**
-
-```http
-GET https://your-jira.example.com/rest/restrepo/1.a7c3/d4e1/repo/tables/propertyentry?offset=0&limit=100
-```
-
-Parameters:
-
-- `offset` – starting row index (0-based)
-- `limit` – page size (e.g. 100, 500, 1000)
-
----
-
-### 3. Lookup by ID
-
-**GET**
-
-```http
-GET https://your-jira.example.com/rest/restrepo/1.a7c3/d4e1/repo/tables/propertyentry/1
-```
-
-Fetch a single row by numeric ID.
-
----
-
-### 4. Batch lookup by IDs
-
-Fetch multiple entities by ID in a single request.
-
-**POST**
-
-```http
-POST https://your-jira.example.com/rest/restrepo/1.a7c3/d4e1/repo/tables/propertyentry/batch
-Content-Type: application/json
-
-{
-  "ids": [1, 2, 3]
-}
-```
-
-Use this from curl, Postman, or scripts to iterate over batches instead of
-calling one ID at a time.
-
----
-
-## Licensing & Teams, Work
-
-Owly supports multiple licensing paths:
-
-- Atlassian Marketplace license (standard DC licensing)
-- **Teams, Work license (custom licensing)** – for:
-  - extended or overlapping support windows,
-  - custom contracts and SLAs,
-  - bundled services (consulting, migrations, integrations).
-
-When a valid **Teams, Work** license is present, it can take precedence over
-the Atlassian license, depending on your configuration.
-
-For commercial questions or custom licensing options, please contact us via:
-
-> 👉 Support portal:  
-> https://teams-work.atlassian.net/servicedesk/customer/portal/1
-
----
-
-## Jira Data Center lifecycle & long-term support
-
-Atlassian has announced end-of-life dates for Jira Data Center versions.
-
-Owly, together with **Teams, Work**, aims to:
-
-- keep your Jira data **accessible and explorable** even after Atlassian
-  support ends for specific DC versions,
-- provide **extended support contracts** via Teams, Work licensing,
-- support **additional Jira versions on request** (older, LTS, or future).
-
-If you need support for:
-
-- older DC versions, or  
-- future unreleased versions / long-term plans
-
-please contact us via the support portal above and we will confirm support
-timelines or offer custom builds.
+- [EULA](eula.html)
